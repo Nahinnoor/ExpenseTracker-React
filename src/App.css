@@ -1,0 +1,75 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex; /* Use Flexbox */
+  justify-content: space-evenly; /* Distribute links evenly across the container */
+  align-items: center; /* Vertically center the links */
+  background-color: lightblue; /* Background color of the navbar */
+  padding: 20px;
+}
+
+.nav-links {
+  position: relative;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 40px;
+}
+
+.navbar a {
+  color: white;
+}
+
+.content {
+  margin-top: 20px; /* Add margin to prevent content from overlapping navbar */
+  padding: 20px;
+  padding-left: 0; /* Add padding for neat spacing */
+}
+
+/* Categories container */
+.categories-container {
+  background-color: #666; /* Grey background */
+  padding: 20px; /* Padding around the container */
+  position: relative;
+}
+
+/* Categories label */
+.categories-label {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  text-align: left; /* Align label to the top-left */
+}
+
+/* Subcategories container */
+.subcategories {
+  display: flex; /* Flexbox for layout */
+  justify-content: space-between; /* Evenly space the boxes */
+  align-items: flex-start; /* Align subcategories to the top */
+  margin-top: 10px; /* Add space between label and boxes */
+  gap: 10px; /* Space between the subcategory boxes */
+}
+
+/* Individual subcategory boxes */
+.subcategory {
+  background-color: white; /* White background for boxes */
+  color: black; /* Text color */
+  padding: 10px; /* Internal padding */
+  border-radius: 10px; /* Rounded edges */
+  text-align: center; /* Center text inside the box */
+  flex: 1; /* Make boxes fill available space evenly */
+  max-width: calc( 25% - 10px ); /* Limit width for 4 boxes in a row, considering gap */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+}
+
+/* Adjust container padding to meet the requirement of 5px spacing */
+.categories-container {
+  padding-bottom: 5px; /* Minimal space between the bottom of the grey container and white boxes */
+}
+
+.AddTransactions {
+  background-color: lightgrey;
+}
