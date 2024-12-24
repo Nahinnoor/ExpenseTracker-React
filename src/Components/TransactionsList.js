@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Transactions_List = () => {
+export const TransactionsList = () => {
   return (
     <div className="Transactions">
       <h2> Transaction History: </h2>

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Total_expense = () => {
+export const TotalExpense = () => {
   return (
     <div>
       <h2>
