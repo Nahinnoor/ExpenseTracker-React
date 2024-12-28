@@ -1,3 +1,7 @@
+body {
+  background-color: lightblue;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -7,7 +11,7 @@
   display: flex; /* Use Flexbox */
   justify-content: space-evenly; /* Distribute links evenly across the container */
   align-items: center; /* Vertically center the links */
-  background-color: lightblue; /* Background color of the navbar */
+  background-color: whitesmoke; /* Background color of the navbar */
   padding: 20px;
 }
 
@@ -23,18 +27,23 @@
 }
 
 .content {
-  margin-top: 20px; /* Add margin to prevent content from overlapping navbar */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 50px; /* Add margin to prevent content from overlapping navbar */
   padding: 20px;
   padding-left: 0; /* Add padding for neat spacing */
 }
 
 /* Categories container */
 .categories-container {
-  background-color: #666; /* Grey background */
-  padding: 20px; /* Padding around the container */
-  position: relative;
+  display: flex;
+  flex-direction: column; /* Stack label and boxes vertically */
+  align-items: stretch; /* Stretch boxes to container width */
+  padding: 20px;
+  background-color: whitesmoke;
+  border-radius: 25px;
 }
-
 /* Categories label */
 .categories-label {
   margin: 0;
@@ -46,30 +55,35 @@
 
 /* Subcategories container */
 .subcategories {
-  display: flex; /* Flexbox for layout */
-  justify-content: space-between; /* Evenly space the boxes */
-  align-items: flex-start; /* Align subcategories to the top */
-  margin-top: 10px; /* Add space between label and boxes */
-  gap: 10px; /* Space between the subcategory boxes */
+  display: flex; /* Enable Flexbox layout */
+  justify-content: space-evenly; /* Evenly distribute space between and around boxes */
+  align-items: center; /* Center the boxes vertically in their container */
+  gap: 20px; /* Add space between boxes */
 }
 
 /* Individual subcategory boxes */
 .subcategory {
-  background-color: white; /* White background for boxes */
-  color: black; /* Text color */
-  padding: 10px; /* Internal padding */
-  border-radius: 10px; /* Rounded edges */
-  text-align: center; /* Center text inside the box */
-  flex: 1; /* Make boxes fill available space evenly */
-  max-width: calc( 25% - 10px ); /* Limit width for 4 boxes in a row, considering gap */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
-}
-
-/* Adjust container padding to meet the requirement of 5px spacing */
-.categories-container {
-  padding-bottom: 5px; /* Minimal space between the bottom of the grey container and white boxes */
+  flex: 0 1 calc(25% - 20px); /* 25% width per box minus space for gaps */
+  max-width: 25%; /* Ensure the boxes don’t grow too large */
+  text-align: center; /* Center the text */
+  padding: 15px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .AddTransactions {
-  background-color: lightgrey;
+  background-color: whitesmoke;
+  border-radius: 25px;
+  padding: 15px; /* Padding around the container */
+}
+
+.box {
+  background-color: whitesmoke;
+  border: 1px solid lightgray;
+  border-radius: 15px; /* Optional: Rounds the corners */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow */
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: space-evenly;
 }
