@@ -1,53 +1,62 @@
 import React, { useState } from "react";
 
 export const AddTransactions = () => {
-  const [TransactionName, setText] = useState("");
+  // State for form inputs
+  const [transactionName, setTransactionName] = useState("");
   const [amount, setAmount] = useState(0);
 
+  // State for the list of transactions
   const [transactions, setTransactions] = useState([]);
 
+  // Handle input changes
+  const handleTransactionNameChange = (e) => setTransactionName(e.target.value);
+  const handleAmountChange = (e) => setAmount(e.target.value);
+
+  // Handle form submission
   const handleAddTransaction = (e) => {
     e.preventDefault(); // Prevent page reload
 
-    if (TransactionName && amount) {
+    if (transactionName && amount) {
       // Add the new transaction to the list
-      setTransactions([...transactions, { name: TransactionName, amount: parseFloat(amount) }]);
+      setTransactions([
+        ...transactions,
+        { name: transactionName, amount: parseFloat(amount) },
+      ]);
 
       // Clear input fields
-      setText("");
+      setTransactionName("");
       setAmount("");
     }
-
   };
   return (
-    <div className="AddTransactions">
-      <h3> Add Transaction </h3>
-      <form onSubmit={handleAddTransaction}>
-        <div className="form-control">
-          <label htmlFor="text">
-            {" "}
-            Transaction <br />{" "}
-          </label>
-          <input
-            type="text"
-            value={TransactionName}
-            onChange={(e) => setText(e.target.value)}
-            placeholder="Enter Text here..."
-          ></input>
-        </div>
-        <div className="form-control">
-          <label htmlFor="text">
-            {" "}
-            Amount <br />{" "}
-          </label>
-          <input
-            type="number"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            placeholder="Amount..."
-          ></input>
-        </div>
-      </form>
+    <div>
+      {/* Add Transaction Section */}
+      <div className="AddTransaction">
+        <h2>Add Transaction</h2>
+        <form onSubmit={handleAddTransaction}>
+          <div>
+            <label>Transaction</label>
+            <input
+              type="text"
+              placeholder="Enter Text here..."
+              value={transactionName}
+              onChange={handleTransactionNameChange}
+            />
+          </div>
+          <div>
+            <label>Amount</label>
+            <input
+              type="number"
+              placeholder="0"
+              value={amount}
+              onChange={handleAmountChange}
+            />
+          </div>
+          <button type="submit">Add Transaction</button>
+        </form>
+      </div>
     </div>
   );
 };
+
+export default AddTransactions
