@@ -1,25 +1,25 @@
 import React, { useState } from "react";
 
 export const AddTransactions = ({ onAddTransaction }) => {
-  const [transactionName, setTransactionName] = useState("");
-  const [amount, setAmount] = useState("");
+  {
+    const [transactionName, setTransactionName] = useState("");
+    const [amount, setAmount] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!transactionName || !amount) return;
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      if (!transactionName || !amount) return;
 
-    const newTransaction = {
-      id: Date.now(),
-      name: transactionName,
-      amount: parseFloat(amount),
-    };
+      const newTransaction = {
+        id: Date.now(),
+        name: transactionName,
+        amount: parseFloat(amount),
+      };
 
       // Clear input fields
       setText("");
       setAmount("");
-    }
-
-  };
+    };
+  }
 
   return (
     <div className="AddTransaction">
