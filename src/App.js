@@ -1,12 +1,25 @@
 import "./App.css";
+import React, { useState } from "react";
 import { AddTransactions } from "./Components/AddTransactions";
 import { BudgetOverview } from "./Components/BudgetOverview";
 import { Categories } from "./Components/Categories";
 import { Header } from "./Components/Header";
 import { TotalExpense } from "./Components/TotalExpense";
-import { TransactionsList } from "./Components/TransactionsList";
+import { TransactionsHistory } from "./Components/TransactionsHistory";
 
 function App() {
+  const [transactions, setTransactions] = useState([]);
+
+  const addTransaction = (transaction) => {
+    setTransactions([...transactions, transaction]);
+  };
+
+  const deleteTransaction = (id) => {
+    setTransactions(
+      transactions.filter((transaction) => transaction.id !== id)
+    );
+  };
+
   return (
     <div>
       <Header />
@@ -19,13 +32,16 @@ function App() {
           <Categories />
         </div>
         <div className="box">
-          <AddTransactions />
+          <AddTransactions onAddTransaction={addTransaction} />
         </div>
         <div className="box">
-          <TransactionsList />
+          <TransactionsHistory
+            transactions={transactions}
+            onDeleteTransaction={deleteTransaction}
+          />
         </div>
       </div>
-    </div>
+      </>
   );
 }
 
